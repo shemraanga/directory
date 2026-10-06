@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#071b18" />
+  <meta name="description" content="SHEMRAANGA — a youth-led technology hub in Bunga, Kampala, building skills, ideas and digital futures." />
+  <title>SHEMRAANGA — Build what comes next.</title>
+  <style>
+    :root{
+      --ink:#071b18; --paper:#f5f1e8; --lime:#c8ff62; --mint:#baf4df;
+      --orange:#ff6b35; --line:rgba(7,27,24,.16); --white:#fff;
+      --max:1180px;
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0; color:var(--ink); background:var(--paper);
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      overflow-x:hidden;
+    }
+    a{color:inherit}
+    .wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
+    nav{
+      height:82px;display:flex;align-items:center;justify-content:space-between;
+      border-bottom:1px solid var(--line);
+    }
+    .brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:900;letter-spacing:.08em}
+    .mark{width:40px;height:40px;display:grid;place-items:center}
+    .navlinks{display:flex;gap:28px;align-items:center;font-size:14px;font-weight:700}
+    .navlinks a{text-decoration:none}
+    .pill{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;
+      background:var(--ink);color:white;border:1px solid var(--ink);border-radius:999px;
+      padding:13px 20px;font-weight:800;transition:.2s ease;
+    }
+    .pill:hover{transform:translateY(-2px);box-shadow:0 8px 0 var(--lime)}
+    .hero{
+      min-height:calc(100vh - 82px);display:grid;grid-template-columns:1.18fr .82fr;
+      gap:60px;align-items:center;padding:70px 0 78px;
+    }
+    .eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:.16em;font-size:12px;font-weight:900}
+    .dot{width:9px;height:9px;border-radius:50%;background:var(--orange);box-shadow:0 0 0 5px rgba(255,107,53,.13)}
+    h1{
+      font-size:clamp(62px,9vw,138px);line-height:.82;letter-spacing:-.075em;
+      margin:26px 0 30px;font-weight:950;max-width:850px;
+    }
+    h1 .accent{color:transparent;-webkit-text-stroke:2px var(--ink)}
+    .lede{font-size:clamp(18px,2vw,24px);line-height:1.45;max-width:690px;margin:0 0 34px;color:#29413d}
+    .actions{display:flex;gap:13px;flex-wrap:wrap}
+    .ghost{background:transparent;color:var(--ink)}
+    .ghost:hover{box-shadow:0 8px 0 var(--mint)}
+    .visual{
+      position:relative;aspect-ratio:4/5;border:1px solid var(--ink);border-radius:34px;
+      background:var(--ink);overflow:hidden;min-height:520px;
+      box-shadow:18px 18px 0 var(--lime);
+    }
+    .grid{
+      position:absolute;inset:0;opacity:.16;
+      background-image:linear-gradient(rgba(255,255,255,.3) 1px,transparent 1px),
+      linear-gradient(90deg,rgba(255,255,255,.3) 1px,transparent 1px);
+      background-size:42px 42px;
+    }
+    .orb{position:absolute;border-radius:50%;filter:blur(.2px)}
+    .o1{width:330px;height:330px;background:var(--lime);top:-70px;right:-90px}
+    .o2{width:220px;height:220px;background:var(--orange);bottom:-60px;left:-50px}
+    .logo-big{position:absolute;inset:0;display:grid;place-items:center}
+    .logo-big svg{width:72%;height:auto}
+    .tag{
+      position:absolute;left:28px;bottom:28px;right:28px;color:white;border-top:1px solid rgba(255,255,255,.35);
+      padding-top:18px;display:flex;justify-content:space-between;gap:15px;font-size:13px;
+    }
+    .tag strong{font-size:16px}
+    .strip{background:var(--lime);border-block:1px solid var(--ink);overflow:hidden}
+    .ticker{display:flex;gap:42px;width:max-content;padding:14px 0;font-weight:950;text-transform:uppercase;letter-spacing:.08em;animation:move 22s linear infinite}
+    @keyframes move{to{transform:translateX(-50%)}}
+    .about{padding:96px 0;display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}
+    .kicker{font-size:12px;text-transform:uppercase;letter-spacing:.18em;font-weight:900}
+    h2{font-size:clamp(40px,5.6vw,78px);line-height:.95;letter-spacing:-.055em;margin:12px 0 24px}
+    .about p{font-size:19px;line-height:1.7;color:#38504c;margin:0}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:38px}
+    .card{border:1px solid var(--ink);border-radius:24px;padding:24px;min-height:220px;background:rgba(255,255,255,.25);transition:.2s}
+    .card:hover{transform:translateY(-5px);background:var(--mint)}
+    .num{font:900 13px/1 monospace;margin-bottom:55px}
+    .card h3{font-size:24px;margin:0 0 10px;letter-spacing:-.03em}
+    .card p{font-size:15px;line-height:1.55}
+    .lead{padding:20px 0 100px}
+    .leadbox{
+      background:var(--ink);color:white;border-radius:34px;padding:clamp(30px,6vw,72px);
+      display:grid;grid-template-columns:1fr auto;align-items:end;gap:40px;position:relative;overflow:hidden;
+    }
+    .leadbox:after{content:"";position:absolute;width:240px;height:240px;border:48px solid var(--lime);border-radius:50%;right:-95px;top:-100px;opacity:.95}
+    .leadbox h2{max-width:780px;margin-bottom:18px}
+    .leadbox p{max-width:670px;color:#bdd0cc;font-size:18px;line-height:1.6}
+    .contact{padding:86px 0 100px;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end}
+    .contact h2{margin-bottom:0}
+    .contact-list{display:grid;gap:14px}
+    .contact-row{display:flex;justify-content:space-between;gap:20px;padding:18px 0;border-bottom:1px solid var(--line);font-size:16px}
+    .contact-row span:first-child{font-weight:900;text-transform:uppercase;letter-spacing:.1em;font-size:11px}
+    footer{border-top:1px solid var(--line);padding:24px 0 36px;font-size:13px}
+    footer .wrap{display:flex;justify-content:space-between;gap:20px}
+    @media(max-width:850px){
+      .navlinks a:not(.pill){display:none}.hero,.about,.contact{grid-template-columns:1fr}
+      .hero{padding-top:46px}.visual{min-height:430px;aspect-ratio:1/1}.about{gap:20px}.cards{grid-template-columns:1fr}
+      .card{min-height:auto}.num{margin-bottom:30px}.leadbox{grid-template-columns:1fr}.contact{gap:20px}
+    }
+    @media(max-width:520px){
+      .wrap{width:min(var(--max),calc(100% - 26px))}.brand{font-size:13px}.mark{width:34px;height:34px}
+      h1{font-size:clamp(58px,21vw,92px)}.visual{min-height:380px;box-shadow:10px 10px 0 var(--lime)}
+      footer .wrap{flex-direction:column}.contact-row{flex-direction:column;gap:6px}
+    }
+  </style>
+</head>
+<body>
+  <header class="wrap">
+    <nav>
+      <a class="brand" href="#top" aria-label="Shemraanga home">
+        <span class="mark">
+          <svg viewBox="0 0 64 64" aria-hidden="true">
+            <path d="M10 45c10 8 34 8 44-4" fill="none" stroke="#071b18" stroke-width="7" stroke-linecap="round"/>
+            <path d="M18 18h12L18 31h13" fill="none" stroke="#071b18" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="45" cy="23" r="6" fill="#ff6b35"/>
+          </svg>
+        </span>
+        SHEMRAANGA
+      </a>
+      <div class="navlinks">
+        <a href="#about">Mission</a><a href="#leadership">Leadership</a>
+        <a class="pill" href="mailto:shemraanga@gmail.com">Connect ↗</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero wrap">
+      <div>
+        <div class="eyebrow"><span class="dot"></span> Youth × Technology × Kampala</div>
+        <h1>BUILD<br><span class="accent">WHAT'S</span><br>NEXT.</h1>
+        <p class="lede">SHEMRAANGA is a youth-led tech hub in Bunga, Kampala — a place to learn, experiment, create and turn bold ideas into useful digital futures.</p>
+        <div class="actions">
+          <a class="pill" href="mailto:shemraanga@gmail.com?subject=Hello%20SHEMRAANGA">Start a conversation ↗</a>
+          <a class="pill ghost" href="#about">Discover the hub ↓</a>
+        </div>
+      </div>
+      <div class="visual" aria-label="Shemraanga brand artwork">
+        <div class="grid"></div><div class="orb o1"></div><div class="orb o2"></div>
+        <div class="logo-big">
+          <svg viewBox="0 0 360 360" role="img" aria-label="Shemraanga logo">
+            <path d="M70 225c56 58 173 57 222-18" fill="none" stroke="#f5f1e8" stroke-width="28" stroke-linecap="round"/>
+            <path d="M92 90h76l-78 91h83" fill="none" stroke="#f5f1e8" stroke-width="27" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="252" cy="121" r="31" fill="#ff6b35"/>
+          </svg>
+        </div>
+        <div class="tag"><strong>Ideas need somewhere to grow.</strong><span>Bunga · Kampala</span></div>
+      </div>
+    </section>
+
+    <div class="strip" aria-hidden="true">
+      <div class="ticker">
+        <span>Learn • Build • Create • Lead •</span><span>Learn • Build • Create • Lead •</span>
+        <span>Learn • Build • Create • Lead •</span><span>Learn • Build • Create • Lead •</span>
+      </div>
+    </div>
+
+    <section class="about wrap" id="about">
+      <div><div class="kicker">01 / The mission</div></div>
+      <div>
+        <h2>A launchpad for young creators.</h2>
+        <p>Born from the wider vision of the Smile Urban Youth Initiative, SHEMRAANGA brings technology closer to young people and their communities. We are building an energetic home for practical digital skills, creative problem-solving, collaboration and youth-led innovation.</p>
+        <div class="cards">
+          <article class="card"><div class="num">01</div><h3>Learn</h3><p>Practical exposure to digital tools, technology and skills that open new possibilities.</p></article>
+          <article class="card"><div class="num">02</div><h3>Build</h3><p>A hands-on culture where ideas move from imagination to prototypes, projects and solutions.</p></article>
+          <article class="card"><div class="num">03</div><h3>Lead</h3><p>Confidence, collaboration and leadership for young people ready to shape their communities.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="lead wrap" id="leadership">
+      <div class="leadbox">
+        <div>
+          <div class="kicker">02 / Leadership</div>
+          <h2>Local roots.<br>Future-facing ambition.</h2>
+          <p>SHEMRAANGA is led by <strong style="color:white">Kaitare Shafic</strong>, with a simple conviction: young people should not only consume technology — they should have the space, skills and support to create with it.</p>
+        </div>
+        <a class="pill" style="background:var(--lime);color:var(--ink);border-color:var(--lime);position:relative;z-index:2" href="mailto:shemraanga@gmail.com">Work with us ↗</a>
+      </div>
+    </section>
+
+    <section class="contact wrap" id="contact">
+      <div>
+        <div class="kicker">03 / Find us</div>
+        <h2>Come build<br>with us.</h2>
+      </div>
+      <div class="contact-list">
+        <div class="contact-row"><span>Location</span><strong>Bunga, Kampala, Uganda</strong></div>
+        <div class="contact-row"><span>Email</span><strong><a href="mailto:shemraanga@gmail.com">shemraanga@gmail.com</a></strong></div>
+        <div class="contact-row"><span>Focus</span><strong>Youth · Technology · Innovation</strong></div>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><span>© <span id="year"></span> SHEMRAANGA</span><span>An initiative for young people building tomorrow.</span></div></footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.querySelectorAll('a[href^="#"]').forEach(a => a.addEventListener('click', e => {
+      const el = document.querySelector(a.getAttribute('href'));
+      if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth'}); }
+    }));
+  </script>
+</body>
+</html>
